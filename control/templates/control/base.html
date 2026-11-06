@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}{% endblock %}</title>  <!-- se define en home -->
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="{% static 'control/img/logo.png' %}">
+        <link rel="stylesheet" href="{% static 'control/css/style.css' %}"/>
+    </head>
+<body>
+    <header>
+        {% block header %}
+
+        {% endblock %}
+    </header>
+    <main>
+        {% block content%}
+
+        {% endblock %}
+    </main>
+    <footer>
+        {% block patitas %}
+
+        {% endblock%}
+    </footer>
+    
+    <script src="{% static 'control/js/app.js' %}"></script>
+</body>
+</html>

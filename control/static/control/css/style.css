@@ -1,0 +1,167 @@
+/* ---------- Base ---------- */
+:root {
+    --bg-1: #0f172a;
+    --bg-2: #1e1b4b;
+    --texto: #e2e8f0;
+    --texto-suave: #94a3b8;
+    --acento-1: #38bdf8;
+    --acento-2: #a78bfa;
+    --acento-3: #f472b6;
+    --django: #44b78b;
+    --maria: #c0765a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    color: var(--texto);
+    background:
+        radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.15), transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(244, 114, 182, 0.15), transparent 40%),
+        linear-gradient(135deg, var(--bg-1), var(--bg-2));
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.cabecera {
+    text-align: center;
+    padding: 3.5rem 3rem;
+    max-width: 640px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 24px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+    animation: aparecer 0.9s ease both;
+}
+
+.etiqueta-top {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--acento-1);
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 999px;
+}
+
+/* ---------- Título con degradado animado ---------- */
+.saludo {
+    font-size: clamp(2.8rem, 9vw, 5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    background: linear-gradient(90deg, var(--acento-1), var(--acento-2), var(--acento-3), var(--acento-1));
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: brillo 6s linear infinite;
+}
+
+.subtitulo {
+    margin-top: 0.5rem;
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    font-weight: 400;
+    color: var(--texto-suave);
+}
+
+/* ---------- Chips ---------- */
+.tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-top: 2.2rem;
+}
+
+.chip {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 999px;
+    border: 1px solid;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chip:hover {
+    transform: translateY(-3px);
+}
+
+.chip-django {
+    color: var(--django);
+    border-color: var(--django);
+    background: rgba(68, 183, 139, 0.12);
+}
+
+.chip-django:hover {
+    box-shadow: 0 6px 20px rgba(68, 183, 139, 0.35);
+}
+
+.chip-maria {
+    color: var(--maria);
+    border-color: var(--maria);
+    background: rgba(192, 118, 90, 0.12);
+}
+
+.chip-maria:hover {
+    box-shadow: 0 6px 20px rgba(192, 118, 90, 0.35);
+}
+
+/* ---------- Animaciones ---------- */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes brillo {
+    to {
+        background-position: 300% 0;
+    }
+}
+
+/* Respeta a quienes prefieren menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .cabecera,
+    .saludo {
+        animation: none;
+    }
+}
+
+/* ---------- Móvil ---------- */
+@media (max-width: 480px) {
+    .cabecera {
+        padding: 2.5rem 1.5rem;
+    }
+}

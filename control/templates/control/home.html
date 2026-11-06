@@ -1,0 +1,20 @@
+{% extends "control/base.html" %}{# llama a la plantilla base #}
+
+{% block title %}
+App Hola
+{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="cabecera">
+        <span class="etiqueta-top">👋 Bienvenido</span>
+        <h1 class="saludo">Hola Mundo</h1>
+        <h2 class="subtitulo">desde Django</h2>
+
+        <div class="tecnologias">
+            <span class="chip chip-django">Django 6</span>
+            <span class="chip chip-maria">MariaDB 11</span>
+        </div>
+    </div>
+</section>
+{% endblock %}
